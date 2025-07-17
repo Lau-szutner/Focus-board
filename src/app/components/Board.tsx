@@ -1,7 +1,8 @@
 import React from 'react';
-import EventCard from '@/app/components/EventCard';
+
 import HoursColumn from '@/app/components/HoursColumn';
 import EventsColumn from '@/app/components/EventsColumn';
+import tasks from '../tasks';
 
 const Board: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Board: React.FC = () => {
         {/* Columna de horas */}
         <HoursColumn />
         {/* Columna de eventos */}
-        <EventsColumn />
+        <EventsColumn tasks={tasks} />
       </div>
     </section>
   );
