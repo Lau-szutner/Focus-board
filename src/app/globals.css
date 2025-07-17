@@ -1,1 +1,69 @@
+/* Importa todo el CSS base de Tailwind CSS */
 @import 'tailwindcss';
+
+/* 
+  @theme define variables CSS personalizadas que se pueden usar en todo el proyecto.
+  Estas variables son accesibles en tiempo de ejecución y permiten cambiar fácilmente
+  colores, fuentes, tamaños, etc.
+*/
+@theme {
+  /* Color principal usando espacio de color OKLCH */
+  --color-primary: oklch(0.5 0.3 120);
+
+  /* Color secundario */
+  --color-secondary: oklch(0.6 0.2 250);
+
+  /* Color de fondo general */
+  --color-background: oklch(0.95 0 210);
+
+  /* Fuente sans-serif personalizada */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Unidad base de espaciado */
+  --spacing-unit: 0.25rem;
+}
+
+/* 
+  @layer utilities define clases CSS personalizadas
+  que se agregan como utilidades Tailwind y pueden usarse en HTML/JSX.
+*/
+@layer utilities {
+  /* Clases para colores de texto usando las variables CSS */
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  /* Clases para colores de fondo usando las variables CSS */
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .bg-background {
+    background-color: var(--color-background);
+  }
+
+  /* Clase para aplicar la fuente personalizada */
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  /* Clases para padding y margin basadas en la variable --spacing-unit 
+     Esto permite escalar fácilmente los espaciados modificando una sola variable */
+  .p-1 {
+    padding: calc(var(--spacing-unit) * 1);
+  }
+  .p-2 {
+    padding: calc(var(--spacing-unit) * 2);
+  }
+  .m-1 {
+    margin: calc(var(--spacing-unit) * 1);
+  }
+  .m-2 {
+    margin: calc(var(--spacing-unit) * 2);
+  }
+}
