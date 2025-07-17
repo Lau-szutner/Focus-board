@@ -3,7 +3,7 @@ const hours = Array.from({ length: 12 }, (_, i) => `${7 + i} AM`);
 
 const HoursColumn: React.FC = () => {
   return (
-    <div className="bg-neutral-100 rounded-md p-4 text-sm flex flex-col">
+    <div className="bg-neutral-50 rounded-md p-4 border border-neutral-300 text-sm flex flex-col">
       {hours.map((hour) => (
         <div key={hour} className="h-[100px] flex items-start text-neutral-500">
           {hour}

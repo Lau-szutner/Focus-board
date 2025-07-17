@@ -7,9 +7,10 @@ interface props {
 const EventsColumn: React.FC<props> = ({ tasks }) => {
   console.log(tasks);
   return (
-    <div className="border border-black-600 rounded-md p-4 text-sm flex flex-col gap-1 hover:bg-neutral-300">
+    <div className="border border-neutral-300 bg-neutral-50 rounded-md p-4 text-sm flex flex-col gap-1 hover:bg-neutral-100">
       {tasks.map((task, index) => (
         <EventCard
+          key={index}
           title={task.title}
           description={task.description}
           startTime={task.startTime}
