@@ -17,7 +17,7 @@ const EventCard: React.FC<Props> = ({
 
   return (
     <div
-      className="bg-white rounded shadow px-4 flex flex-col justify-center items-start"
+      className="bg-white rounded shadow px-4 flex flex-col justify-center items-start hover:bg-neutral-300 duration-400 ease-in-out"
       style={{ height }}
     >
       <p className="text-sm font-semibold">{title}</p>
