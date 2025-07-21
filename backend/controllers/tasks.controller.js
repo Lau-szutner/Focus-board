@@ -15,22 +15,23 @@ export const getAllTasks = async (req, res) => {
   }
 };
 
-// obtenes cursos solo por id
+// crear una tarea
+export const newTask = async (req, res) => {
+  const { title } = req.body;
 
-// export const getCourseById = async (req, res) => {
-//   try {
-//     const courses = await Course.findByPk(req.params.id);
+  if (!title) {
+    return res.status(400).json({ error: 'Fill it up all' });
+  }
 
-//     if (courses === null) {
-//       console.log('Courses not found!');
-//     }
-//     res.status(200).json(courses);
-//   } catch (error) {
-//     res.status(500).json(
-//       {
-//         message: 'error al obtener el cursos',
-//       },
-//       error
-//     );
-//   }
-// };
+  try {
+    const newTask = await Task.create({ title });
+
+    res.status(200).json(newTask);
+
+    console.log('new task created');
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: 'Error al crear la tarea', details: error.message });
+  }
+};
