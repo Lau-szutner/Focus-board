@@ -29,6 +29,7 @@ export const getTaskById = async (req, res) => {
   }
 };
 
+//create new task
 export const newTask = async (req, res) => {
   const { title, body } = req.body;
 
