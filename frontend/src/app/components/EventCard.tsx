@@ -1,16 +1,11 @@
 interface Props {
   title: string;
-  description: string;
+  body: string;
   startTime: number; // en formato 24h, ej: 8 para 8AM
   endTime: number; // en formato 24h, ej: 10 para 10AM
 }
 
-const EventCard: React.FC<Props> = ({
-  title,
-  description,
-  startTime,
-  endTime,
-}) => {
+const EventCard: React.FC<Props> = ({ title, body, startTime, endTime }) => {
   const hourHeight = 100; // 1 hora = 64px, puedes ajustarlo a tu diseño
   const durationInHours = endTime - startTime;
   const height = durationInHours * hourHeight;
@@ -21,7 +16,7 @@ const EventCard: React.FC<Props> = ({
       style={{ height }}
     >
       <p className="text-sm font-semibold">{title}</p>
-      <p className="text-xs text-neutral-500">{description}</p>
+      <p className="text-xs text-neutral-500">{body}</p>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const EventsColumn: React.FC<props> = ({ tasks }) => {
         <EventCard
           key={index}
           title={task.title}
-          description={task.description}
+          body={task.body}
           startTime={task.startTime}
           endTime={task.endTime}
         />

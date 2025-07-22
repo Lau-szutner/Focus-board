@@ -1,7 +1,7 @@
 // tasks.ts
 export interface Task {
   title: string;
-  description: string;
+  body: string;
   startTime: number;
   endTime: number;
 }
@@ -9,19 +9,19 @@ export interface Task {
 const tasks: Task[] = [
   {
     title: 'Tarea 1',
-    description: 'Una tarea muy sencilla',
+    body: 'Una tarea muy sencilla',
     startTime: 7,
     endTime: 9,
   },
   {
     title: 'Tarea 1',
-    description: 'Una tarea muy sencilla',
+    body: 'Una tarea muy sencilla',
     startTime: 7,
     endTime: 9,
   },
   {
     title: 'Tarea 1',
-    description: 'Una tarea muy sencilla',
+    body: 'Una tarea muy sencilla',
     startTime: 7,
     endTime: 9,
   },
