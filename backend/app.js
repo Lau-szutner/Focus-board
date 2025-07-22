@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import './config/database.js'; // Esto ejecuta el archivo y llama a verifyConnection() y syncDatabase()
 import tasksRoutes from './routes/task.route.js';
 dotenv.config();
@@ -7,7 +8,7 @@ dotenv.config();
 const app = express();
 const port = 3000;
 app.use(express.json()); // <-- Agrega esta línea
-
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('hello world');
 });
