@@ -18,6 +18,14 @@ const Task = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    start_time: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+    end_time: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
   },
   {
     tableName: 'Tasks',

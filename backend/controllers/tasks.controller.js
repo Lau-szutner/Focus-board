@@ -31,9 +31,9 @@ export const getTaskById = async (req, res) => {
 
 //create new task
 export const newTask = async (req, res) => {
-  const { title, body } = req.body;
+  const { title, body, startTime, endTime } = req.body;
 
-  if (!title && !body) {
+  if (!title && !body && !startTime && !endTime) {
     return res.status(400).json({ error: 'Fill it up all' });
   }
 
