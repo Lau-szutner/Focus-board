@@ -15,19 +15,30 @@ export const getAllTasks = async (req, res) => {
   }
 };
 
-// crear una tarea
-export const newTask = async (req, res) => {
-  const { title } = req.body;
+// get a task by id
+export const getTaskById = async (req, res) => {
+  console.log(req.params.id);
+  try {
+    const taskById = await Task.findByPk(req.params.id);
 
-  if (!title) {
+    res.status(200).json(taskById);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: 'Error al crear la tarea', details: error.message });
+  }
+};
+
+export const newTask = async (req, res) => {
+  const { title, body } = req.body;
+
+  if (!title && !body) {
     return res.status(400).json({ error: 'Fill it up all' });
   }
 
   try {
-    const newTask = await Task.create({ title });
-
+    const newTask = await Task.create({ title, body });
     res.status(200).json(newTask);
-
     console.log('new task created');
   } catch (error) {
     res

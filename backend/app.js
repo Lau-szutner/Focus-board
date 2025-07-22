@@ -7,10 +7,13 @@ dotenv.config();
 const app = express();
 const port = 3000;
 app.use(express.json()); // <-- Agrega esta línea
+
 app.get('/', (req, res) => {
   res.send('hello world');
 });
+
 app.use('/tasks', tasksRoutes); // Rutas para los usuarios
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

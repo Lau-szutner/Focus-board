@@ -14,6 +14,10 @@ const Task = sequelize.define(
       type: DataTypes.STRING(100),
       allowNull: false,
     },
+    body: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     tableName: 'Tasks',
