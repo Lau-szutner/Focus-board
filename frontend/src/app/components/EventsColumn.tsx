@@ -5,7 +5,6 @@ interface props {
 }
 // ✅ Columna de eventos (dinámica más adelante)
 const EventsColumn: React.FC<props> = ({ tasks }) => {
-  console.log(tasks);
   return (
     <div className="border border-neutral-300 bg-neutral-50 rounded-md p-4 text-sm flex flex-col gap-1 hover:bg-neutral-100">
       {tasks.map((task, index) => (

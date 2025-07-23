@@ -7,13 +7,16 @@ interface Props {
 
 const EventCard: React.FC<Props> = ({ title, body, startTime, endTime }) => {
   const hourHeight = 100; // 1 hora = 64px, puedes ajustarlo a tu diseño
-  const durationInHours = endTime - startTime;
+  const durationInHours = Number(endTime) - Number(startTime);
   const height = durationInHours * hourHeight;
+  const safeHeight = height > 0 ? height : hourHeight;
+
+  console.log({ startTime, endTime, durationInHours, height });
 
   return (
     <div
       className="bg-white rounded shadow px-4 flex flex-col justify-center items-start hover:bg-neutral-300 duration-400 ease-in-out"
-      style={{ height }}
+      style={{ height: safeHeight }}
     >
       <p className="text-sm font-semibold">{title}</p>
       <p className="text-xs text-neutral-500">{body}</p>

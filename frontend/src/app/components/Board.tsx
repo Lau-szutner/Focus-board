@@ -1,26 +1,28 @@
 'use client';
 
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import HoursColumn from '@/app/components/HoursColumn';
 import EventsColumn from '@/app/components/EventsColumn';
 import NewTaskBtn from '@/app/components/NewTaskBtn';
-import tasks from '../tasks';
 
 const Board: React.FC = () => {
+  const [tasks, setTasks] = useState<any[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('http://127.0.0.1:3000/tasks');
         const data = await response.json();
+        setTasks(data);
         console.log(data);
       } catch (error) {
         console.error('Error al obtener las tareas:', error);
       }
     };
 
-    fetchData(); // Llamás a la función
+    fetchData();
   }, []);
+
   return (
     <section className="w-11/12 mx-auto p-4 h-full">
       <div className="flex justify-between items-center">
