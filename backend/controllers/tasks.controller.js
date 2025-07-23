@@ -31,14 +31,14 @@ export const getTaskById = async (req, res) => {
 
 //create new task
 export const newTask = async (req, res) => {
-  const { title, body, startTime, endTime } = req.body;
+  const { title, body, start_time, end_time } = req.body;
 
-  if (!title && !body && !startTime && !endTime) {
+  if (!title && !body && !start_time && !end_time) {
     return res.status(400).json({ error: 'Fill it up all' });
   }
 
   try {
-    const newTask = await Task.create({ title, body });
+    const newTask = await Task.create({ title, body, start_time, end_time });
     res.status(200).json(newTask);
     console.log('new task created');
   } catch (error) {
