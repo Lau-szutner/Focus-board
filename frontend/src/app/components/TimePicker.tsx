@@ -41,17 +41,17 @@ const TimePicker: React.FC<TimePickerProps> = ({
   const minutes = Array.from({ length: 60 }, (_, i) => i);
 
   return (
-    <div className="flex flex-col gap-1 w-40">
+    <div className="flex flex-col gap-1 w-40 ">
       {label && <label className="text-sm font-semibold">{label}</label>}
       <div className="flex gap-2 items-center">
         <select
           aria-label="Hour"
           value={hour}
           onChange={(e) => setHour(parseInt(e.target.value, 10))}
-          className="border border-gray-300 rounded p-2 bg-white cursor-pointer"
+          className="border border-gray-300 rounded p-2 cursor-pointer bg-[#323232]"
         >
           {hours.map((h) => (
-            <option key={h} value={h}>
+            <option key={h} value={h} className="">
               {h}
             </option>
           ))}
@@ -61,7 +61,7 @@ const TimePicker: React.FC<TimePickerProps> = ({
           aria-label="Minute"
           value={minute}
           onChange={(e) => setMinute(parseInt(e.target.value, 10))}
-          className="border border-gray-300 rounded p-2 bg-white cursor-pointer"
+          className="border border-gray-300 rounded p-2  cursor-pointer bg-[#323232]"
         >
           {minutes.map((m) => (
             <option key={m} value={m}>
@@ -73,7 +73,7 @@ const TimePicker: React.FC<TimePickerProps> = ({
           aria-label="AM or PM"
           value={meridian}
           onChange={(e) => setMeridian(e.target.value as 'AM' | 'PM')}
-          className="border border-gray-300 rounded p-2 bg-white cursor-pointer"
+          className="border border-gray-300 rounded p-2  cursor-pointer bg-[#323232]"
         >
           <option value="AM">AM</option>
           <option value="PM">PM</option>

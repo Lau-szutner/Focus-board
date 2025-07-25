@@ -15,7 +15,7 @@ const EventCard: React.FC<Props> = ({ title, body, startTime, endTime }) => {
 
   return (
     <div
-      className="bg-white rounded shadow px-4 flex flex-col justify-center items-start hover:bg-neutral-300 duration-400 ease-in-out"
+      className="bg-[#323232] rounded shadow px-4 flex flex-col justify-center items-start hover:bg-[#424242] duration-400 ease-in-out"
       style={{ height: safeHeight }}
     >
       <p className="text-sm font-semibold">{title}</p>

@@ -12,7 +12,7 @@ const NewTaskBtn: React.FC = () => {
   return (
     <>
       <button
-        className="py-2 px-5 bg-neutral-50 border border-neutral-300 h-fit rounded-md hover:bg-blue-500 hover:text-white duration-400 ease-in-out cursor-pointer"
+        className="py-2 px-5 bg-[#323232] border border-neutral-300 h-fit rounded-md hover:bg-[#14FFEC] hover:text-black duration-400 ease-in-out cursor-pointer"
         onClick={toggleModal}
       >
         Add tasks

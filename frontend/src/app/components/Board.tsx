@@ -46,7 +46,7 @@ const Board: React.FC = () => {
   ];
 
   return (
-    <section className="w-11/12 mx-auto p-4 h-full">
+    <section className="w-11/12 mx-auto p-4 h-fit">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold mb-2">Board Dates</h1>
