@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-
+import TimePicker from './TimePicker';
 interface Props {
   isOpen: boolean;
   toggleModal: () => void;
 }
 
 const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
+  const [time, setTime] = useState('12:00 PM');
   if (!isOpen) return null;
 
   return (
@@ -43,6 +44,7 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
               placeholder="Your task title"
             />
           </label>
+          <TimePicker label="Select time" value={time} onChange={setTime} />
         </form>
         <button
           onClick={toggleModal}
