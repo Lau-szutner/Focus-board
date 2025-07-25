@@ -28,8 +28,8 @@ const Board: React.FC = () => {
     {
       title: 'Tarea num1',
       body: 'Esta es la tarea numero 1',
-      startTime: '7',
-      endTime: '9',
+      startTime: '0',
+      endTime: '2',
     },
     {
       title: 'Tarea num2',
@@ -40,10 +40,22 @@ const Board: React.FC = () => {
     {
       title: 'Tarea num3',
       body: 'Esta es la tarea numero 3',
-      startTime: '7',
+      startTime: '5',
       endTime: '9',
     },
   ];
+
+  tasks.sort((a, b) => {
+    const startA = Number(a.startTime);
+    const startB = Number(b.startTime);
+
+    if (startA === startB) {
+      return Number(a.endTime) - Number(b.endTime);
+    }
+    return startA - startB;
+
+    console.log(tasks);
+  });
 
   return (
     <section className="w-11/12 mx-auto p-4 h-fit">
