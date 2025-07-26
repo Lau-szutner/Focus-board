@@ -12,8 +12,8 @@ const EventsColumn: React.FC<props> = ({ tasks }) => {
           key={index}
           title={task.title}
           body={task.body}
-          startTime={task.startTime}
-          endTime={task.endTime}
+          start_time={task.start_time}
+          end_time={task.end_time}
         />
       ))}
     </div>

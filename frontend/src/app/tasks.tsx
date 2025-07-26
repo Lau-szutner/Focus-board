@@ -2,29 +2,10 @@
 export interface Task {
   title: string;
   body: string;
-  startTime: number;
-  endTime: number;
+  start_time: number;
+  end_time: number;
 }
 
-const tasks: Task[] = [
-  {
-    title: 'Tarea 1',
-    body: 'Una tarea muy sencilla',
-    startTime: 7,
-    endTime: 9,
-  },
-  {
-    title: 'Tarea 1',
-    body: 'Una tarea muy sencilla',
-    startTime: 7,
-    endTime: 9,
-  },
-  {
-    title: 'Tarea 1',
-    body: 'Una tarea muy sencilla',
-    startTime: 7,
-    endTime: 9,
-  },
-];
+const tasks: Task[] = [];
 
 export default tasks;

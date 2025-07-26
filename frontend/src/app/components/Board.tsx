@@ -7,50 +7,50 @@ import EventsColumn from '@/app/components/EventsColumn';
 import NewTaskBtn from '@/app/components/NewTaskBtn';
 
 const Board: React.FC = () => {
-  // const [tasks, setTasks] = useState<any[]>([]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('http://127.0.0.1:3000/tasks');
-  //       const data = await response.json();
-  //       setTasks(data);
-  //       console.log(data);
-  //     } catch (error) {
-  //       console.error('Error al obtener las tareas:', error);
-  //     }
-  //   };
+  const [tasks, setTasks] = useState<any[]>([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:3000/tasks');
+        const data = await response.json();
+        setTasks(data);
+        console.log(data);
+      } catch (error) {
+        console.error('Error al obtener las tareas:', error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   //Usar en caso de trabajar en Codespaces
-  const tasks = [
-    {
-      title: 'Tarea num1',
-      body: 'Esta es la tarea numero 1',
-      startTime: '0',
-      endTime: '2',
-    },
-    {
-      title: 'Tarea num2',
-      body: 'Esta es la tarea numero 2',
-      startTime: '7',
-      endTime: '9',
-    },
-    {
-      title: 'Tarea num3',
-      body: 'Esta es la tarea numero 3',
-      startTime: '5',
-      endTime: '9',
-    },
-  ];
+  // const tasks = [
+  //   {
+  //     title: 'Tarea num1',
+  //     body: 'Esta es la tarea numero 1',
+  //     startTime: '0',
+  //     endTime: '2',
+  //   },
+  //   {
+  //     title: 'Tarea num2',
+  //     body: 'Esta es la tarea numero 2',
+  //     startTime: '7',
+  //     endTime: '9',
+  //   },
+  //   {
+  //     title: 'Tarea num3',
+  //     body: 'Esta es la tarea numero 3',
+  //     startTime: '5',
+  //     endTime: '9',
+  //   },
+  // ];
 
   tasks.sort((a, b) => {
-    const startA = Number(a.startTime);
-    const startB = Number(b.startTime);
+    const startA = Number(a.start_time);
+    const startB = Number(b.start_time);
 
     if (startA === startB) {
-      return Number(a.endTime) - Number(b.endTime);
+      return Number(a.end_time) - Number(b.end_time);
     }
     return startA - startB;
 
