@@ -47,23 +47,24 @@ export default function CalendarPage() {
   };
 
   return (
-    <div style={{ padding: 20 }} className="h-screen">
+    <div className="h-full">
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="timeGridDay" // Vista inicial día con horas
-        locale={esLocale} // Idioma español
-        events={events}
+        initialView="timeGridDay" // Vista inicial: día con horarios
+        allDaySlot={false}
+        locale={esLocale} // Calendario en español
+        events={events} // Lista de eventos a mostrar
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay',
         }}
-        editable={true} // Para poder arrastrar eventos
-        selectable={true} // Para seleccionar rango horario
-        selectMirror={true}
-        dayMaxEvents={true}
-        eventClick={handleEventClick}
-        height="100%"
+        editable={true} // Permite mover eventos con drag & drop
+        selectable={true} // Permite seleccionar rangos de tiempo
+        selectMirror={true} // Refleja la selección mientras arrastras
+        dayMaxEvents={true} // Muestra un botón "más" si hay muchos eventos en un día
+        eventClick={handleEventClick} // Asocia el handler al clic en evento
+        height="100%" // Ocupa todo el alto disponible
       />
     </div>
   );

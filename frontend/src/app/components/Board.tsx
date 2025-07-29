@@ -10,7 +10,7 @@ import CalendarPage from './CalendarPage';
 
 const Board: React.FC = () => {
   return (
-    <section className="w-11/12 mx-auto p-4 h-fit">
+    <section className="w-11/12 p-4 h-full">
       <CalendarPage />
     </section>
   );

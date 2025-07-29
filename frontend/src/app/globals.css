@@ -67,3 +67,102 @@
     margin: calc(var(--spacing-unit) * 2);
   }
 }
+
+/* ===========================
+   FullCalendar + Tailwind (Notion Style)
+   =========================== */
+
+/* Contenedor general */
+.fc {
+  @apply text-black text-sm leading-relaxed;
+}
+
+.fc .fc-scrollgrid {
+  @apply border border-gray-100 rounded-xl bg-white shadow-sm;
+}
+
+/* ===========================
+   Header (barra de controles)
+   =========================== */
+.fc .fc-toolbar.fc-header-toolbar {
+  @apply mb-5 flex items-center justify-between;
+}
+
+.fc .fc-toolbar-title {
+  @apply text-lg font-semibold text-gray-800 tracking-tight;
+}
+
+.fc .fc-button {
+  @apply bg-transparent border border-gray-200 text-gray-700 rounded-md px-3 py-1.5 text-sm hover:bg-gray-100 transition;
+}
+
+.fc .fc-button-primary {
+  @apply bg-gray-800 text-white border-gray-800 hover:bg-gray-900;
+}
+
+.fc .fc-button-active {
+  @apply bg-gray-800 text-white;
+}
+
+/* ===========================
+   Días y celdas
+   =========================== */
+
+/* Vista mes: celdas */
+.fc .fc-daygrid-day-frame {
+  @apply hover:bg-gray-50 transition-colors;
+}
+
+/* Número del día */
+.fc .fc-daygrid-day-number {
+  @apply text-xs font-medium text-gray-500 p-1;
+}
+
+/* Vista semana/día: barra Todo el día */
+.fc .fc-timegrid-allday {
+  @apply bg-gray-50 text-[11px] uppercase tracking-wide text-gray-400;
+}
+
+/* Vista semana/día: celdas */
+.fc .fc-timegrid-slot {
+  @apply border-gray-100;
+}
+
+/* Vista semana/día: columna de horas */
+.fc .fc-timegrid-axis {
+  @apply text-[11px] text-gray-400;
+}
+
+/* ===========================
+   Eventos
+   =========================== */
+.fc .fc-event {
+  @apply rounded-md px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 shadow-none;
+}
+
+.fc .fc-event-title {
+  @apply text-gray-800 truncate;
+}
+
+.fc .fc-event:hover {
+  @apply bg-gray-200;
+}
+
+/* ===========================
+   Selección y resaltados
+   =========================== */
+.fc .fc-highlight {
+  @apply bg-gray-100;
+}
+
+/* Día actual */
+.fc .fc-day-today {
+  @apply bg-gray-50;
+}
+
+/* ===========================
+   Bordes y separadores
+   =========================== */
+.fc .fc-scrollgrid-section > * {
+  @apply border-gray-100;
+}
