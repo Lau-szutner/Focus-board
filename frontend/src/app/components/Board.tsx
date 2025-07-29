@@ -23,28 +23,6 @@ const Board: React.FC = () => {
     fetchData();
   }, []);
 
-  //Usar en caso de trabajar en Codespaces
-  // const tasks = [
-  //   {
-  //     title: 'Tarea num1',
-  //     body: 'Esta es la tarea numero 1',
-  //     startTime: '0',
-  //     endTime: '2',
-  //   },
-  //   {
-  //     title: 'Tarea num2',
-  //     body: 'Esta es la tarea numero 2',
-  //     startTime: '7',
-  //     endTime: '9',
-  //   },
-  //   {
-  //     title: 'Tarea num3',
-  //     body: 'Esta es la tarea numero 3',
-  //     startTime: '5',
-  //     endTime: '9',
-  //   },
-  // ];
-
   tasks.sort((a, b) => {
     const startA = Number(a.start_time);
     const startB = Number(b.start_time);
@@ -53,8 +31,6 @@ const Board: React.FC = () => {
       return Number(a.end_time) - Number(b.end_time);
     }
     return startA - startB;
-
-    console.log(tasks);
   });
 
   return (
