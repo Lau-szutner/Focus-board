@@ -11,8 +11,8 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
   const [formData, setFormData] = useState({
     title: '',
     body: '',
-    startTime: '12:00', // formato 24hs
-    endTime: '13:00', // formato 24hs
+    start_time: '12:00', // formato 24hs
+    end_time: '13:00', // formato 24hs
   });
 
   // Si el modal no está abierto, no se renderiza
@@ -20,6 +20,7 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
 
   // Maneja el cambio en inputs de texto (title y body)
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //extraigo del e, el target que la disparo, y de ese input extraigo su name y su value
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -28,7 +29,11 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
   };
 
   // Maneja el cambio de los timepickers (startTime y endTime)
-  const handleTimeChange = (field: 'startTime' | 'endTime', value: string) => {
+  const handleTimeChange = (
+    field: 'start_time' | 'end_time',
+    value: string
+  ) => {
+    //Con el primer prop, decido si cambiar el startTime o el endTime, luego lo actualizo con el valor que me devuelve el timepicker
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -108,14 +113,14 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, toggleModal }) => {
 
           <TimePicker
             label="Select start time"
-            value={formData.startTime}
-            onChange={(value) => handleTimeChange('startTime', value)}
+            value={formData.start_time}
+            onChange={(value) => handleTimeChange('start_time', value)}
           />
 
           <TimePicker
             label="Select end time"
-            value={formData.endTime}
-            onChange={(value) => handleTimeChange('endTime', value)}
+            value={formData.end_time}
+            onChange={(value) => handleTimeChange('end_time', value)}
           />
 
           <button

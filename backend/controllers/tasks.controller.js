@@ -34,7 +34,7 @@ export const newTask = async (req, res) => {
   const { title, body, start_time, end_time } = req.body;
 
   if (!title && !body && !start_time && !end_time) {
-    return res.status(400).json({ error: 'Fill it up all' });
+    return res.status(400).json({ error: 'Faltan campos requeridos' });
   }
 
   try {

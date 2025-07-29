@@ -19,11 +19,11 @@ const Task = sequelize.define(
       allowNull: false,
     },
     start_time: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     end_time: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
