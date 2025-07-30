@@ -74,13 +74,12 @@
 
 /* Contenedor general */
 .fc {
-  @apply text-black text-sm leading-relaxed;
+  @apply text-white text-xl;
 }
 
 .fc .fc-scrollgrid {
-  @apply border border-gray-100 rounded-xl bg-white shadow-sm;
+  @apply border rounded-md;
 }
-
 /* ===========================
    Header (barra de controles)
    =========================== */
@@ -89,19 +88,23 @@
 }
 
 .fc .fc-toolbar-title {
-  @apply text-lg font-semibold text-gray-800 tracking-tight;
+  @apply text-3xl font-semibold text-gray-100 tracking-tight;
 }
 
 .fc .fc-button {
-  @apply bg-transparent border border-gray-200 text-gray-700 rounded-md px-3 py-1.5 text-sm hover:bg-gray-100 transition;
+  @apply px-3 py-1.5 text-sm bg-neutral-800;
+}
+
+.fc .fc-button:hover {
+  @apply bg-black;
 }
 
 .fc .fc-button-primary {
-  @apply bg-gray-800 text-white border-gray-800 hover:bg-gray-900;
+  @apply bg-neutral-800;
 }
 
 .fc .fc-button-active {
-  @apply bg-gray-800 text-white;
+  @apply text-blue-500;
 }
 
 /* ===========================
@@ -110,22 +113,22 @@
 
 /* Vista mes: celdas */
 .fc .fc-daygrid-day-frame {
-  @apply hover:bg-gray-50 transition-colors;
+  @apply transition-colors bg-neutral-800 hover:bg-neutral-700 rounded-sm;
 }
 
 /* Número del día */
 .fc .fc-daygrid-day-number {
-  @apply text-xs font-medium text-gray-500 p-1;
+  @apply text-xs font-medium text-gray-300 p-1;
 }
 
 /* Vista semana/día: barra Todo el día */
 .fc .fc-timegrid-allday {
-  @apply bg-gray-50 text-[11px] uppercase tracking-wide text-gray-400;
+  @apply bg-neutral-900 text-[11px] uppercase tracking-wide text-gray-400;
 }
 
 /* Vista semana/día: celdas */
 .fc .fc-timegrid-slot {
-  @apply border-gray-100;
+  @apply border-gray-700 bg-neutral-800 hover:bg-neutral-700;
 }
 
 /* Vista semana/día: columna de horas */
@@ -137,11 +140,11 @@
    Eventos
    =========================== */
 .fc .fc-event {
-  @apply rounded-md px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 shadow-none;
+  @apply rounded-md px-2 py-1 text-xs font-medium bg-neutral-400;
 }
 
 .fc .fc-event-title {
-  @apply text-gray-800 truncate;
+  @apply text-black;
 }
 
 .fc .fc-event:hover {
@@ -152,17 +155,38 @@
    Selección y resaltados
    =========================== */
 .fc .fc-highlight {
-  @apply bg-gray-100;
+  @apply bg-neutral-700;
 }
 
 /* Día actual */
 .fc .fc-day-today {
-  @apply bg-gray-50;
+  @apply bg-neutral-900;
 }
 
 /* ===========================
    Bordes y separadores
    =========================== */
 .fc .fc-scrollgrid-section > * {
-  @apply border-gray-100;
+  @apply border-none;
+}
+
+.fc .fc-col-header {
+  @apply bg-neutral-900 border-none rounded-md;
+}
+
+.fc .fc-col-header-cell {
+  @apply text-xs text-gray-300 py-2 uppercase tracking-wider;
+}
+
+.fc .fc-col-header-cell-cushion {
+  @apply block px-1;
+}
+
+/* Quitar bordes de toda la tabla */
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid-section > *,
+.fc .fc-col-header-cell,
+.fc .fc-daygrid-day,
+.fc .fc-timegrid-slot {
+  @apply border border-neutral-600;
 }
